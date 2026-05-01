@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务流程 | 乡村别墅工程设计</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background: url("https://picsum.photos/id/1042/1920/1080") no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgba(255,255,255,0.88);
+            background-blend-mode: lighten;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        nav {
+            background: rgba(44, 62, 80, 0.9);
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .service-icon {
+            font-size: 40px;
+            color: #3498db;
+        }
+        .service-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .service-content p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        /* 滚动动画样式 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .service-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="gallery.html">案例展示</a>
+        <a href="service.html">服务流程</a>
+        <a href="contact.html">联系我们</a>
+    </nav>
+
+    <h1 class="fade-in">📋 我们的服务流程</h1>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">💬</div>
+        <div class="service-content">
+            <h3>1. 需求沟通</h3>
+            <p>详细了解您的建房需求、预算、风格偏好和当地政策，提供初步建议。</p>
+        </div>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">📐</div>
+        <div class="service-content">
+            <h3>2. 方案设计</h3>
+            <p>根据您的需求，定制专属别墅设计方案，包括平面布局和外观效果图。</p>
+        </div>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">🎨</div>
+        <div class="service-content">
+            <h3>3. 效果图出图</h3>
+            <p>制作高清别墅外观、室内效果图，让您提前看到建成后的样子。</p>
+        </div>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">📄</div>
+        <div class="service-content">
+            <h3>4. 施工图交付</h3>
+            <p>提供完整的施工图纸，包括结构、水电、给排水等，直接用于施工。</p>
+        </div>
+    </div>
+
+    <footer class="fade-in">
+        © 2026 乡村别墅工程设计 | 用AI+SU打造理想家园
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="toTop" style="position: fixed; bottom: 30px; right: 30px; padding: 10px 15px; background: #3498db; color: white; border: none; border-radius: 50%; cursor: pointer; display: none;">↑</button>
+
+    <script>
+        // 回到顶部逻辑
+        const toTopBtn = document.getElementById('toTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                toTopBtn.style.display = 'block';
+            } else {
+                toTopBtn.style.display = 'none';
+            }
+        });
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 滚动动画逻辑
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+    <!-- 侧边在线客服 -->
+<div style="position:fixed; right:20px; bottom:140px; z-index:9999;">
+  <button onclick="alert('欢迎咨询！请添加微信：xxx-xxxx-xxxx 一对一沟通');" 
+  style="width:50px;height:50px;border-radius:50%;background:#3498db;color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,0.2);">
+    💬
+  </button>
+</div>
+</body>
+</html>
